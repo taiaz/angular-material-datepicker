@@ -1,0 +1,45 @@
+<div class="container">
+  <a
+    href="https://furetechnews.com/how-to-implement-angular-material-datepicker-in-angular-13-14/"
+    target="_blank"
+  >
+    <h2>Angular material date switcher</h2>
+  </a>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="outline">
+      <mat-label>Default day switcher</mat-label>
+      <input matInput [matDatepicker]="datepicker" formControlName="date1" />
+      <mat-datepicker-toggle
+        matSuffix
+        [for]="datepicker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #datepicker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Year base date switcher</mat-label>
+      <input matInput [matDatepicker]="matDatepicker" formControlName="date2" />
+      <mat-datepicker-toggle
+        matSuffix
+        [for]="matDatepicker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #matDatepicker startView="year"></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Multiple year date switcher</mat-label>
+      <input
+        matInput
+        [matDatepicker]="matDate3Picker"
+        formControlName="date3"
+      />
+      <mat-datepicker-toggle
+        matSuffix
+        [for]="matDate3Picker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #matDate3Picker></mat-datepicker>
+    </mat-form-field>
+      
+    <button mat-raised-button color="primary" type="submit">Submit</button>
+  </form>
+</div>
